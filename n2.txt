@@ -1,0 +1,15 @@
+import numpy as np
+
+# Define inputs and weights
+inputs = np.array([0.3, 0.5, 0.6])
+weights = np.array([0.2, 0.1, -0.3])
+
+print("Inputs:", inputs)
+print("Weights:", weights)
+
+print("\nThe net input can be calculated as: Yin = x1w1 + x2w2 + x3w3")
+
+# Dot product of inputs and weights
+Yin = np.dot(inputs, weights)
+
+print("Net Input (Yin):", round(Yin, 3))

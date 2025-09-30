@@ -1,0 +1,12 @@
+% Facts
+likes(ram, mango).
+likes(sita, apple).
+likes(ram, banana).
+likes(sita, mango).
+
+% Rules
+% X and Y are friends if they like the same fruit
+friends(X, Y) :- likes(X, Z), likes(Y, Z), X \= Y.
+
+% Queries:
+% ?- likes(ram, What).

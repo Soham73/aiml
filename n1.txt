@@ -1,0 +1,20 @@
+x = float(input("Enter the value of x: "))
+weight = float(input("Enter the value of weight: "))
+bias = float(input("Enter the value of bias: "))
+print("Inputs of value(x), weight and bias are : ", x , weight, bias)
+print(x)
+print(weight)
+print(bias)
+
+#caluclate the net weight
+
+net = (weight * x + bias)
+if(net<0):
+    out = 0
+elif(net>=0)&(net<=1):
+    out = net
+else:
+    out = 1
+    
+print("Net Weight is :", net)
+print("output is :", out)
