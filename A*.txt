@@ -1,0 +1,42 @@
+from collections import deque
+def astaralgo(startnode, goalnode, graph1, heuristic):
+    queue = deque()
+    queue.append(startnode)
+    finalpath = []
+    visited = set()
+    while queue:
+        cnode = queue.popleft()
+        finalpath.append(cnode)
+        visited.add(cnode)
+        if cnode == goalnode:
+            break
+        minval = float('inf')
+        nextnode = None
+        for neighbor in graph1.get(cnode, []):
+            if neighbor not in visited and heuristic[neighbor]<minval:
+                minval = heuristic[neighbor]
+                nextnode = neighbor
+        if nextnode:
+            queue.append(nextnode)
+    print("Final Path:", finalpath)
+
+# Main Logic
+graph1 = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': [],
+    'D': [],
+    'E': []
+
+}
+
+heuristic = {
+    'A': 6,
+    'B': 4,
+    'C': 5,
+    'D': 0,
+    'E': 2
+
+}
+
+astaralgo('A', 'D', graph1, heuristic)
